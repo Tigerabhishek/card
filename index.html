@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        .worldContaienr
+        {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+        }
+        .containera
+        {
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+        .containerb
+        {
+            width: 50%;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+        }
+        .boxContainer
+        {
+            height: 250px;
+            width: 550px;
+            background-color: rgba(225,225,225,0.2);
+            border-radius: 5px;
+            box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: start;
+            position: relative;
+            padding: 5px;
+        }
+        .boxContainerb
+        {
+            height: 250px;
+            width: 550px;
+            background-color: rgba(225,225,225,0.2);
+            border-radius: 5px;
+            box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: start;
+            position: relative;
+            color: white;
+            padding: 5px;
+        }
+        img
+        {
+            height: 100%;
+            width: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .box 
+        {
+            padding: 10px;
+            width: 100%;
+            height: 250px;
+            position: relative;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 5px;
+        }
+       .dec {
+            height: 144px;
+            overflow-y: scroll;
+        }
+        .dec::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .mineBox
+        {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+        }
+        button
+        {
+            padding: 8px 20px;
+            background-color: royalblue;
+            color: white;
+            border-radius: 20px;
+            border: 2px solid royalblue;
+            cursor: pointer;
+            transition: 1s;
+        }
+        button:hover 
+        {
+            border: 2px solid royalblue;
+            color: royalblue;
+            background-color: transparent;
+        }
+        @media (max-width: 920px) {
+            .worldContaienr
+            {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .containera, .containerb 
+            {
+                width: 100%;
+            }
+            .boxContainer, .boxContainerb
+            {
+                height: auto;
+            }
+            img 
+            {
+                height: auto;
+            }
+            .box 
+            {
+                height: auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .boxContainer, .boxContainerb
+            {
+                display: flex;
+                flex-direction: column;
+            }
+            img 
+            {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="worldContaienr">
+        <div class="containera">
+            <div class="boxContainer">
+                <img src="wa.jpg" alt="wa.jpg" srcset="">
+                <div class="box">
+                    <h1>PRODUCT NAME</h1>
+                    <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
+                    <div class="mineBox">
+                        <p>Cost: $20,000</p>
+                        <button>BUY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerb">
+            <div class="boxContainerb">
+                <img src="wa.jpg" alt="wa.jpg" srcset="">
+                <div class="box">
+                    <h1>PRODUCT NAME</h1>
+                    <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
+                    <div class="mineBox">
+                        <p>Cost: $20,000</p>
+                        <button>BUY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
