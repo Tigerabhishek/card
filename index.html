@@ -21,12 +21,13 @@
         }
         .containera
         {
-            width: 50%;
+            width: 100%;
             height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-wrap: wrap;
+            justify-content:space-evenly;
             padding: 5px;
+            gap: 10px;
         }
         .containerb
         {
@@ -96,7 +97,7 @@
             justify-content: start;
             gap: 10px;
         }
-        button
+        #buyBut
         {
             padding: 8px 20px;
             background-color: royalblue;
@@ -106,12 +107,125 @@
             cursor: pointer;
             transition: 1s;
         }
-        button:hover 
+
+        #buyBut:hover
         {
             border: 2px solid royalblue;
             color: royalblue;
             background-color: transparent;
         }
+        .formContainer
+        {
+            padding: 10px;
+            background-color: transparent;
+            backdrop-filter: blur(15px);
+            box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+            border-radius: 5px;
+            height: auto;
+            width: 90%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: fixed;
+            top: 50px;
+            left: 5%;
+        }
+        form 
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+            font-size: 16px;
+        }
+        .formBixa 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .inputForm 
+        {
+            padding: 8px 10px;
+            flex: 1px;
+            border-radius: 5px;
+            border: 2px solid #7a7a7a;
+            outline: none;
+            transition: 1s;
+            background-color: transparent;
+            font-size: 17px;
+        }
+        .inputForm:hover 
+        {
+            border: 2px solid royalblue;
+            color: royalblue;
+        }
+        .inputForm:focus 
+        {
+            border: 2px solid royalblue;
+            color: royalblue;
+        }
+        ::placeholder 
+        {
+            color: #7a7a7a;
+        }
+        .formBix
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .descritionForm
+        {
+            padding: 6px;
+            border-radius: 5px;
+            border: 2px solid #7a7a7a;
+            resize: none;
+            height: 200px;
+            width: 100%;
+            outline: none;
+            background-color: transparent;
+            font-size: 17px;
+            overflow-y: scroll;
+        }
+        .descritionForm::-webkit-scrollbar
+        {
+            display: none;
+        }
+        .descritionForm:hover 
+        {
+            border: 2px solid royalblue;
+            color: royalblue;
+        }
+        .descritionForm:focus 
+        {
+            border: 2px solid royalblue;
+            color: royalblue;
+        }
+        .sendFormBut
+        {
+            padding: 8px 10px;
+            background-color: royalblue;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .sendFormBut:hover 
+        {
+            box-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+        }
+        .closeBut
+        {
+            position: fixed;
+            right: 5%;
+            top: 5%;
+            cursor: pointer;
+        }
+/*         
         @media (max-width: 920px) {
             .worldContaienr
             {
@@ -136,16 +250,45 @@
             {
                 height: auto;
             }
+        } */
+         @media (max-width: 1119px) {
+            .boxContainer {
+    height: auto;
+    width: 266px;
+    background-color: rgba(225, 225, 225, 0.2);
+    border-radius: 5px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+    padding: 5px;
+         }
         }
-        @media (max-width: 480px) {
-            .boxContainer, .boxContainerb
+        @media (max-width: 551px) {
+            .worldContaienr
             {
+                height: auto;
                 display: flex;
                 flex-direction: column;
+                gap: 10px;
+            }
+            .containera, .containerb 
+            {
+                width: 100%;
+            }
+            .boxContainer, .boxContainerb
+            {
+                height: auto;
+                width: 100%;
+                min-width: 250px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
             }
             img 
             {
-                width: 100%;
+                height: auto;
             }
         }
     </style>
@@ -156,29 +299,75 @@
             <div class="boxContainer">
                 <img src="wa.jpg" alt="wa.jpg" srcset="">
                 <div class="box">
-                    <h1>PRODUCT NAME</h1>
+                    <h1>PRODUCT 1</h1>
                     <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
                     <div class="mineBox">
-                        <p>Cost: $20,000</p>
-                        <button>BUY</button>
+                        <button id="buyBut" onclick="openform('Product 1')">BUY</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <img src="wa.jpg" alt="wa.jpg" srcset="">
+                <div class="box">
+                    <h1>PRODUCT 2</h1>
+                    <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
+                    <div class="mineBox">
+                        
+                        <button id="buyBut" onclick="openform('Product 2')">BUY</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <img src="wa.jpg" alt="wa.jpg" srcset="">
+                <div class="box">
+                    <h1>PRODUCT 3</h1>
+                    <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
+                    <div class="mineBox">
+                        
+                        <button id="buyBut" onclick="openform('Product 3')">BUY</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boxContainer">
+                <img src="wa.jpg" alt="wa.jpg" srcset="">
+                <div class="box">
+                    <h1>PRODUCT 4</h1>
+                    <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
+                    <div class="mineBox">
+                        
+                        <button id="buyBut" onclick="openform('Product 4')">BUY</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="containerb">
-            <div class="boxContainerb">
-                <img src="wa.jpg" alt="wa.jpg" srcset="">
-                <div class="box">
-                    <h1>PRODUCT NAME</h1>
-                    <p class="dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae tenetur vel cum libero nostrum provident ratione molestiae inventore ipsum, exercitationem quas delectus atque asperiores debitis quae assumenda praesentium dignissimos, eos expedita vitae!</p>
-                    <div class="mineBox">
-                        <p>Cost: $20,000</p>
-                        <button>BUY</button>
-                    </div>
+        <div class="formContainer" id="foramcontainer">
+            <p class="closeBut" onclick="closeform()">close</p>
+            <h2>Contact Form</h2>
+            <form>
+                <p id="proname"></p>
+                <div class="formBixa">
+                    <input type="text" class="inputForm" id="name"  placeholder="Name" required>
+                    <input type="number" class="inputForm" id="name"  placeholder="Phone Number: +91 2334563478" maxlength="
+                    12"  required>
+                    <input type="email" class="inputForm" id="name"  placeholder="Email" required>
                 </div>
-            </div>
+                <div class="formBix">
+                    <textarea name="" id="descrption" placeholder="Description" class="descritionForm"></textarea>
+                    <button class="sendFormBut" type="submit">Send</button>
+                </div>
+            </form>
         </div>
     </div>
+    <script>
+        function closeform() {
+            var foramcontainer = document.getElementById("foramcontainer").style.display = 'none';
+        }
+
+        function openform(pname){
+            var proname = document.getElementById("proname").innerHTML = pname;
+            var foramcontainer = document.getElementById("foramcontainer").style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
